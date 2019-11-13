@@ -1,0 +1,28 @@
+<% content_for :title, "View Contact" %>
+
+<div class="people_wrapper">
+  <div class="home">
+
+    <div class="blog">
+      <div class="blog_c">
+      <span class="blog_name"><%= @person.title %></span>
+      <span class="blog_age"><%= @person.age %></span>
+      <span class="blog_phone"><%= @person.phone %></span>
+      <span class="blog_email"><%= @person.email %></span>
+      
+      </div>
+      <div class="blog_actions">
+        <%= link_to "Edit", edit_person_path(@person.id), class: "sec_btn" %>
+        <%=
+          link_to "Delete",
+          delete_person_path(@person.id),
+          class: "sec_btn blog_dlt",
+          :data => { :confirm => "Are you sure??" },
+          :method => :delete
+        %>
+        <%= link_to "Back", people_path, class: 'pri_btn' %>
+      </div>
+    </div>
+
+  </div>
+</div>

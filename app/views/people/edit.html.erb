@@ -1,0 +1,43 @@
+<% content_for :title, "Edit Person" %>
+
+<div class="edit">
+
+  <div class="edit_info">
+    <%= image_tag  "cute.png", class: "edit_img", alt: "Your avatar" %>
+    <span>Edit Person</span>
+  </div>
+
+  <%= form_for @person, url: { action: 'update' } do |f| %>
+
+    <% if @person.errors.any? %>
+      <%= render 'partials/emssg', mssg: @person.errors.full_messages[0] %>
+    <% end %>
+
+    <div class="eu_div">
+      <span class='edit_span'>Name</span>
+      <%= f.text_field :title, class: "e_username", placeholder: 'Name..', autofocus: true, spellcheck:false, autocomplete: false %>
+    </div>
+    
+    <div class="eu_div">
+      <span class='edit_span'>Age</span>
+      <%= f.text_field :title, class: "e_username", placeholder: 'Age..', autofocus: true, spellcheck:false, autocomplete: false %>
+    </div>
+    
+    <div class="eu_div">
+      <span class='edit_span'>Phone</span>
+      <%= f.text_field :title, class: "e_username", placeholder: 'Phone..', autofocus: true, spellcheck:false, autocomplete: false %>
+    </div>
+  
+    <div class="eu_div">
+      <span class='edit_span'>Email</span>
+      <%= f.text_field :title, class: "e_username", placeholder: 'Email..', autofocus: true, spellcheck:false, autocomplete: false %>
+    </div>
+
+
+    <div class="eb_btns">
+       <%= f.submit "Update Person" %>
+    </div>
+
+  <% end %>
+
+</div>
